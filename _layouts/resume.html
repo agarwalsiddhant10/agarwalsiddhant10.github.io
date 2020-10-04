@@ -1,6 +1,6 @@
-----
+<!-- ----
 layout: default
----
+--- -->
 
 {% if page.header.overlay_color or page.header.overlay_image or page.header.image %}
   {% include page__hero.html %}
@@ -18,7 +18,7 @@ layout: default
   <div class="resume">
     {% unless page.header.overlay_color or page.header.overlay_image %}
       <h1 class="page__title">{{ page.title }}</h1>
-      <iframe src="files/resume.pdf" width=80% height=1000px>
+      <iframe src="../files/resume.pdf" width=50% height=1000px>
     </iframe>
     {% endunless %}
     <!-- {{ content }} -->
