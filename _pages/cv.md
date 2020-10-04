@@ -1,5 +1,5 @@
 ---
-layout: resume
+layout: default
 title: "CV"
 permalink: /cv/
 author_profile: true
@@ -7,9 +7,11 @@ redirect_from:
   - /resume
 ---
 
-<!-- {% include base_path %}
+{% include base_path %}
 
-Education
+<iframe src="https://drive.google.com/file/d/1V4JKhYWUvM0A0VCWuw-9M7Fmtrpl7QqA/preview" width="70%" height="1000"></iframe>
+
+<!-- Education
 ======
 * Dual Deg
 * M.S. in Jekyll, GitHub University, 2014
