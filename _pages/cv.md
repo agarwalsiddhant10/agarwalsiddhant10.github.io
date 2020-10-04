@@ -9,7 +9,7 @@ redirect_from:
 
 {% include base_path %}
 
-<iframe src="https://drive.google.com/file/d/1V4JKhYWUvM0A0VCWuw-9M7Fmtrpl7QqA/preview" width="50%" height="1000"></iframe>
+<iframe src="https://drive.google.com/file/d/1V4JKhYWUvM0A0VCWuw-9M7Fmtrpl7QqA/preview" width="100%" height="1000"></iframe>
 
 <!-- Education
 ======
