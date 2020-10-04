@@ -187,6 +187,18 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  projects_intern:
+    output: true
+    permalink: /:collection/:path/
+  projects_agv:
+    output: true
+    permalink: /:collection/:path/
+  projects_btp:
+    output: true
+    permalink: /:collection/:path/
+  projects_course :
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults
@@ -225,8 +237,8 @@ defaults:
     values:
       layout: single
       author_profile: true
-      share: true
-      comments: true
+      share: false
+      comments: false
   # _portfolio
   - scope:
       path: ""
@@ -239,11 +251,37 @@ defaults:
   # _talks
   - scope:
       path: ""
-      type: talks
+      type: projects_intern
     values:
       layout: talk
       author_profile: true
       share: true
+  - scope:
+    path: ""
+    type: projects_agv
+  values:
+    layout: single
+    author_profile: true
+    share: true
+    comments: true
+  - scope:
+    path: ""
+    type: projects_btp
+  values:
+    layout: single
+    author_profile: true
+    share: true
+    comments: true
+  - scope:
+    path: ""
+    type: projects_course
+  values:
+    layout: single
+    author_profile: true
+    share: true
+    comments: true
+
+    
 
 # Sass/SCSS
 sass:
