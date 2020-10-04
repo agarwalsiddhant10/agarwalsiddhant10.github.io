@@ -13,14 +13,14 @@ layout: default
 {% endif %}
 
 <div id="main" role="main">
-  <!-- {% include sidebar.html %} -->
+  {% include sidebar.html %}
 
   <div class="resume">
     {% unless page.header.overlay_color or page.header.overlay_image %}
       <h1 class="page__title">{{ page.title }}</h1>
-      <iframe src="https://drive.google.com/file/d/1V4JKhYWUvM0A0VCWuw-9M7Fmtrpl7QqA/preview" width="640" height="480"></iframe>
+      <iframe src="https://drive.google.com/file/d/1V4JKhYWUvM0A0VCWuw-9M7Fmtrpl7QqA/preview" width="70%" height="1000"></iframe>
     <!-- </iframe> -->
     {% endunless %}
-    <!-- {{ content }} -->
+    {{ content }}
   </div>
 </div>
