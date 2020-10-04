@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: archive
 title: "CV"
 permalink: /cv/
 author_profile: true
@@ -8,12 +8,10 @@ redirect_from:
 ---
 
 {% include base_path %}
-<!-- {% include side} -->
-<!-- <iframe src="https://drive.google.com/file/d/1V4JKhYWUvM0A0VCWuw-9M7Fmtrpl7QqA/preview" width="40%" height="1000"></iframe> -->
 
 Education
 ======
-* Dual Deg
+* B.S. in GitHub, GitHub University, 2012
 * M.S. in Jekyll, GitHub University, 2014
 * Ph.D in Version Control Theory, GitHub University, 2018 (expected)
 
