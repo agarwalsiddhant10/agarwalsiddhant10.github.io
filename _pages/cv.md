@@ -9,9 +9,9 @@ redirect_from:
 
 {% include base_path %}
 <!-- {% include side} -->
-<iframe src="https://drive.google.com/file/d/1V4JKhYWUvM0A0VCWuw-9M7Fmtrpl7QqA/preview" width="40%" height="1000"></iframe>
+<!-- <iframe src="https://drive.google.com/file/d/1V4JKhYWUvM0A0VCWuw-9M7Fmtrpl7QqA/preview" width="40%" height="1000"></iframe> -->
 
-<!-- Education
+Education
 ======
 * Dual Deg
 * M.S. in Jekyll, GitHub University, 2014
@@ -58,4 +58,4 @@ Teaching
   
 Service and leadership
 ======
-* Currently signed in to 43 different slack teams -->
+* Currently signed in to 43 different slack teams
