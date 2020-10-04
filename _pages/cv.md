@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: archive
 title: "CV"
 permalink: /cv/
 author_profile: true
@@ -8,8 +8,8 @@ redirect_from:
 ---
 
 {% include base_path %}
-
-<iframe src="https://drive.google.com/file/d/1V4JKhYWUvM0A0VCWuw-9M7Fmtrpl7QqA/preview" width="70%" height="1000"></iframe>
+<!-- {% include side} -->
+<iframe src="https://drive.google.com/file/d/1V4JKhYWUvM0A0VCWuw-9M7Fmtrpl7QqA/preview" width="40%" height="1000"></iframe>
 
 <!-- Education
 ======
