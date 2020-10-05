@@ -17,3 +17,24 @@ Projects Done during Internships
 {% for post in site.projects_intern reversed %}
   {% include archive-single-cv.html %}
 {% endfor %}
+
+Robotics Projects
+=====
+
+{% for post in site.projects_intern reversed %}
+  {% include archive-single-cv.html %}
+{% endfor %}
+
+Thesis Project
+=====
+
+{% for post in site.projects_intern reversed %}
+  {% include archive-single-cv.html %}
+{% endfor %}
+
+Course Projects
+=====
+
+{% for post in site.projects_intern reversed %}
+  {% include archive-single-cv.html %}
+{% endfor %}
