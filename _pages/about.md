@@ -14,11 +14,10 @@ I am a fourth year Dual Degree (BTech + MTech) student from the Department of Co
 News
 =====
 * [Dec 18] - My first paper finally accepted in ICPRAM.
-* [Jan 19] - PAN IIT
+* [Jan 19] - Member of the only all 2nd yr team to qualify for PAN IIT finals held at IIT Delhi.
 * [Feb 19] - Visiting Prague for my first conference.
-* [June 19] - IGVC
-* [March 20] - Intern at USC starts
-* [May 20] - Intern at CMU starts
+* [June 19] - Secured Runners Up Position at the Intelligent Ground Vehicle Competition, Michigan.
+* [September 19] - Recipient of Class of 1970 Alumni (US) Association Prize and IIT Kharagpur Alumni (California Chapter) Award for being the best student in order of merit among third year B.Tech.(Hons.)/B.Arch.(Hons.) courses securing highest CGPA
 * [September 20] - Submitting 2 papers in ICLR 2021.
 
 
