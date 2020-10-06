@@ -21,20 +21,20 @@ Projects Done during Internships
 Robotics Projects
 -----
 
-{% for post in site.projects_intern reversed %}
+{% for post in site.projects_agv reversed %}
   {% include archive-single.html %}
 {% endfor %}
 
 Thesis Project
 -----
 
-{% for post in site.projects_intern reversed %}
+{% for post in site.projects_btp reversed %}
   {% include archive-single.html %}
 {% endfor %}
 
 Course Projects
 -----
 
-{% for post in site.projects_intern reversed %}
+{% for post in site.projects_course reversed %}
   {% include archive-single.html %}
 {% endfor %}
