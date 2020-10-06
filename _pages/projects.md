@@ -12,28 +12,28 @@ author_profile: true
 {% include base_path %}
 
 Projects Done during Internships
------
+=====
 
 {% for post in site.projects_intern reversed %}
   {% include archive-single.html %}
 {% endfor %}
 
 Robotics Projects
------
+=====
 
 {% for post in site.projects_agv reversed %}
   {% include archive-single.html %}
 {% endfor %}
 
 Thesis Project
------
+=====
 
 {% for post in site.projects_btp reversed %}
   {% include archive-single.html %}
 {% endfor %}
 
 Course Projects
------
+=====
 
 {% for post in site.projects_course reversed %}
   {% include archive-single.html %}
