@@ -1,7 +1,7 @@
 ---
 title: "Real-time Lane Detection, Fitting and Navigation for Unstructured Environments"
 collection: publications
-permalink: /publication/2020-06-15-Vision
+permalink: /publication/IGVC_Vision
 # excerpt: 'This paper is about the number 3. The number 4 is left for future work.'
 # date: 2015-10-01
 venue: 'International Conference on Image, Video Processing and Artificial Intelligence 2019, Shanghai, China'
