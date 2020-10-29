@@ -1,7 +1,7 @@
 ---
 title: "Traffic Sign Classification using Hybrid HOG-SURF Features and Convolutional Neural Networks"
 collection: publications
-permalink: /publication/2019-02-20-HOG_SURF_CNN
+permalink: /publication/HOG_SURF_CNN
 # excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
 # date: 2009-10-01
 venue: 'International Conference on Pattern Recognition Applications and Methods 2019, Prague, Czech Republic'
