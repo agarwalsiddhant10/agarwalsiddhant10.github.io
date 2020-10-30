@@ -7,6 +7,8 @@ redirect_from:
   - /wordpress/blog-posts/
 ---
 
+## Blogs
+
 {% include base_path %}
 
 {% for post in site.posts %}
