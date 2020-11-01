@@ -12,5 +12,6 @@ redirect_from:
 {% include base_path %}
 
 {% for post in site.posts %}
+  ## test
   {% include archive-single.html %}
 {% endfor %}
