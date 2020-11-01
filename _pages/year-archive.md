@@ -3,8 +3,6 @@ layout: archive
 permalink: /year-archive/
 title: "Blog posts"
 author_profile: true
-redirect_from:
-  - /wordpress/blog-posts/
 ---
 
 ## Blogs
@@ -12,6 +10,5 @@ redirect_from:
 {% include base_path %}
 
 {% for post in site.posts %}
-  ## test
   {% include archive-single.html %}
 {% endfor %}
