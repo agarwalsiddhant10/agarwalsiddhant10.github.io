@@ -199,6 +199,9 @@ collections:
   projects_course :
     output: true
     permalink: /:collection/:path/
+  blog_posts:
+    output: true
+    permalink: /:collection/:path/
 
 
 # Defaults

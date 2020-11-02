@@ -1,6 +1,6 @@
 ---
 layout: archive
-permalink: /year-archive/
+permalink: /blog_posts/
 title: "Blog posts"
 author_profile: true
 ---
@@ -9,6 +9,6 @@ author_profile: true
 
 {% include base_path %}
 ## test1
-{% for post in site.posts %}
+{% for post in site.blog_posts %}
   {% include archive-single.html %}
 {% endfor %}
