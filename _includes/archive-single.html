@@ -26,7 +26,6 @@
       </div>
     {% endif %}
     {% if post.redirect %}
-      <h2>Blog</h2>
       <h2><a href="{{ post.redirect }}">{{ post.title }}</a></h2>
     {% else %}
       <h2 class="archive__item-title" itemprop="headline">
@@ -60,6 +59,8 @@
 
     {% if post.excerpt and site.read_more != 'enabled' and post.collection != 'publications' %}
     <p class="archive__item-excerpt" itemprop="description">{{ post.excerpt | markdownify }}</p>
+    {% elsif post.collection == 'blog_posts' %}
+    <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ post.redirect }}"> Read more</a></strong></p></p>
     {% elsif post.excerpt and site.read_more == 'enabled' and post.collection != 'publications' %}
     <p class="archive__item-excerpt" itemprop="description"><p>{{ post.excerpt | markdownify | remove: '<p>' | remove: '</p>' }}<strong><a href="{{ base_path }}{{ post.url }}" rel="permalink"> Read more</a></strong></p></p>
     {% endif %}
