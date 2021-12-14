@@ -151,66 +151,40 @@
         <table align=center width=900px>
           <tr>
             <td align=center width=180px>
-            <center><span style="font-size:20px"><a href="https://agarwalsiddhant10.github.io/" target="_blank">Siddhant Agarwal</a></span></center></td>
+            <center><span style="font-size:20px"><a href="https://agarwalsiddhant10.github.io/" target="_blank">Siddhant Agarwal<sup>1</sup></a></span></center></td>
             <td align=center width=180px>
-              <center><span style="font-size:20px"><a href="#" target="_blank">Owais Iqbal</a></span></center></td>
+              <center><span style="font-size:20px"><a href="#" target="_blank">Aaron Courville<sup>2</sup></a></span></center></td>
             <td align=center width=180px>
-                <center><span style="font-size:20px"><a href="#" target="_blank">Sree Aditya Buridi</a></span></center></td>
+                <center><span style="font-size:20px"><a href="#" target="_blank">Rishabh Agarwal<sup>2, 3</sup></a></span></center></td>
             <tr/>
          </table>
 
-         <table align=center width=600px>
-            <tr>
-              <td align=center width=150px>
-                <center><span style="font-size:20px"><a href="#" target="_blank">Mada Manjusha</a></span></center></td>
-              <td align=center width=150px>
-                <center><span style="font-size:20px"><a href="https://cse.iitkgp.ac.in/~adas/" target="_blank">Abir Das</a></span></center></td>
-        <tr/>
-      </table>
         <!-- <center><span style="font-size:15px;color:#000000">&#8224: Equal Contribution</span></center> -->
 
-        <!-- <table align=center width=800px>
+        <table align=center width=800px>
           <tr>
             <td align=center width=150px><center><sup>1 </sup><span style="font-size:18px">IIT Kharagpur</span></center></td>
-            <td align=center width=150px><center><sup>2 </sup><span style="font-size:18px">MIT-IBM Watson AI Lab</span></center></td>
-            <td align=center width=150px><center><sup>3 </sup><span style="font-size:18px">Boston University</span></center></td>
+            <td align=center width=150px><center><sup>2 </sup><span style="font-size:18px">MILA, Universite de Montreal</span></center></td>
+            <td align=center width=150px><center><sup>3 </sup><span style="font-size:18px">Google Research Brain Team</span></center></td>
           <tr/>
-        </table>  -->
+        </table> 
         <table align=center width=600px>
           <tr>
             <td align=center width=600px>
-            <center><span style="font-size:24px"><a href="https://xai4debugging.github.io/" target="_blank">NeurIPS 2021 workshop on explainableAI approaches for debugging and diagnosis</a></span></center></td>
+            <center><span style="font-size:24px"><a href="https://sites.google.com/view/deep-rl-workshop-neurips2021" target="_blank">NeurIPS 2021 workshop on Deep Reinforcement Learning</a> and <a href="https://sites.google.com/view/ecorl2021/">Ecological Theory of Reinforcement Learning</a></span></center></td>
           <tr/>
         </table>
         <table align=center width=200px>
             <tr><td width=200px>
-              <center><a href="images/rexl.jpg"><img src = "images/rexl.jpg" width="900" height="300"></img></a><br></center>
+              <center><a href="images/bpr.png"><img src = "images/bpr.png" width="900" height="300"></img></a><br></center>
             </td></tr>
         </table>
 
         <center id="abstract"><h1>Abstract</h1></center>
-        Deep Learning has become overly complicated and has enjoyed stellar success in solving several classical problems like image classification, object detection, etc. Several methods for explaining these decisions have been proposed. Black-box methods to generate saliency maps are particularly interesting due to the fact that they do not utilize the internals of the model to explain the decision. Most black-box methods perturb the input and observe the changes in the output. We formulate saliency map generation as a sequential search problem and leverage upon Reinforcement Learning (RL) to accumulate evidence from input images that most strongly support decisions made by a classifier. Such a strategy encourages to search <i>intelligently</i> for the perturbations that will lead to high-quality explanations. While successful black box explanation approaches need to rely on heavy computations and suffer from small sample approximation, the deterministic policy learned by our method makes it a lot more efficient during the inference. Experiments on three benchmark datasets demonstrate the superiority of the proposed approach in inference time over state-of-the-arts without hurting the performance.<br>
+        Deep reinforcement learning~(RL) agents trained on a few environments, often struggle to generalize on unseen environments, even when such environments are semantically equivalent to training environments. Such agents learn representations that overfit the characteristics of the training environments. We posit that generalization can be improved by assigning similar representations to scenarios with similar sequences of long-term optimal behavior. To do so, we propose behavior predictive representations~(BPR) that capture long-term optimal behavior. BPR trains an agent to predict latent state representations multiple steps into the future such that these representations can predict the optimal behavior at the future steps. We demonstrate that BPR provides large gains on a jumping task from pixels, a problem designed to test generalization.<br>
         <hr>
 
-        <!-- <center id="results0"><h1>Experimental Results Overview</h1></center>
-        <table align=center width=500px>
-            <tr><td width=500px>
-              <center><a href="images/comix_neurips2021_ucf_hmdb.png"><img src = "images/comix_neurips2021_ucf_hmdb.png" width="500" height="270"></img></a><br></center>
-            </td></tr>
-            <caption width=500px align="center"> Results on <strong>UCF-HMDB</strong> Dataset. </caption>
-          </table>
-        <br>
-        <!-- <hr> -->
-
-        <!-- <center id="results0"><h1>Experimental Results Overview</h1></center> -->
-        <!-- <table align=center width=500px>
-            <tr><td width=500px>
-              <center><a href="images/comix_neurips2021_epic_jester.png"><img src = "images/comix_neurips2021_epic_jester.png" width="700" height="160"></img></a><br></center>
-            </td></tr>
-            <caption width=500px> Results on <strong>Jester</strong> and <strong>Epic-Kitchens</strong> Datasets. </caption>
-          </table>          
-        <br>
-        <hr> --> -->
+        
 
         
         <center id="sourceCode"><h1>Paper & Code</h1></center>
@@ -220,19 +194,17 @@
             <tr></tr>
           <tr>
             <td >
-        <a href="#"><img class="paperpreview" src="images/rexl.jpg" width="250px"/></a>
+        <a href="#"><img class="paperpreview" src="images/bpr.png" width="250px"/></a>
           </td>
           <td></td>
           <td width=700px > <span style="font-size:20px">
-            Siddhant Agarwal, Owais Iqbal, Sree Aditya Buridi, Mada Manjusha, Abir Das<br/>
+            Siddhant Agarwal, Aaron Courville, Rishabh Agarwal<br/>
               <a href="#">
-                  Reinforcement Explanation Learning</a> <br/> <i>1<sup>st</sup> Workshop on explainable AI approaches for debugging and diagnosis at <br> Thirty-fifth Conference on Neural Information Processing Systems (NeurIPS)</i>, 2021 <br/>
-            [<a href="#">PDF</a>]
-            [<a href="#">Supp</a>]
-            [<a href="">Video Presentation</a>]
+                Behavior Predictive Representations for Generalization in Reinforcement Learning</a> <br/> <i>7<sup>th</sup> Workshop on Deep Reinforcement Learning <br> and Ecological Theory of Reinforcement Learning at <br> Thirty-fifth Conference on Neural Information Processing Systems (NeurIPS)</i>, 2021 <br/>
+            [<a href="https://drive.google.com/file/d/1flEUpWjhLShVb9255a-cRjjY2HymdEAr/view?usp=sharing">PDF</a>]
+            [<a href="#">Video Presentation</a>]
             [<a href="#">Poster</a>]
               [<a href="#">Slides</a>]
-              [<a href="https://github.com/CVIR/RExL.git ">Code</a>]
 
 
 </span>

@@ -140,77 +140,49 @@
 <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
   <head>
     <link rel="icon" type="image/png" href="resources/ucsd_logo.png">
-    <title>"Reinforcement Explanation Learning"</title>
-    <meta property='og:title' content='Reinforcement Explanation Learning' />
-    <meta property="og:description" content="Siddhant Agarwal, Owais Iqbal, Sree Aditya Buridi, Mada Manjusha, Abir Das. Reinforcement Explanation Learning." />
-    <meta property='og:url' content='https://agarwalsiddhant10/projects/comix.html' />
+    <title>"Poisoned Classifiers are not only backdoored, they are fundamentally broken"</title>
+    <meta property='og:title' content='Poisoned Classifiers are not only backdoored, they are fundamentally broken' />
+    <meta property="og:description" content="Minjie Sun, Siddhant Agarwal, Zico Kolter. Poisoned Classifiers are not only backdoored, they are fundamentally broken." />
+    <meta property='og:url' content='https://agarwalsiddhant10/projects/poisoned_classifier.html' />
   </head>
   <body>
-        <center><span style="font-size:40px;font-weight:bold;color:#182B49">Reinforcement Explanation Learning</span></center>
+        <center><span style="font-size:40px;font-weight:bold;color:#182B49">Poisoned Classifiers are not only backdoored, they are fundamentally broken</span></center>
 
         <table align=center width=900px>
           <tr>
             <td align=center width=180px>
-            <center><span style="font-size:20px"><a href="https://agarwalsiddhant10.github.io/" target="_blank">Siddhant Agarwal</a></span></center></td>
+            <center><span style="font-size:20px"><a href="https://eric-mingjie.github.io/" target="_blank">Mingjie Sun<sup>1</sup></a></span></center></td>
             <td align=center width=180px>
-              <center><span style="font-size:20px"><a href="#" target="_blank">Owais Iqbal</a></span></center></td>
+              <center><span style="font-size:20px"><a href="https://agarwalsiddhant10.github.io/" target="_blank">Siddhant Agarwal<sup>2</sup></a></span></center></td>
             <td align=center width=180px>
-                <center><span style="font-size:20px"><a href="#" target="_blank">Sree Aditya Buridi</a></span></center></td>
+                <center><span style="font-size:20px"><a href="https://zicokolter.com/" target="_blank">Zico Kolter<sup>3</sup></a></span></center></td>
             <tr/>
          </table>
-
-         <table align=center width=600px>
-            <tr>
-              <td align=center width=150px>
-                <center><span style="font-size:20px"><a href="#" target="_blank">Mada Manjusha</a></span></center></td>
-              <td align=center width=150px>
-                <center><span style="font-size:20px"><a href="https://cse.iitkgp.ac.in/~adas/" target="_blank">Abir Das</a></span></center></td>
-        <tr/>
       </table>
         <!-- <center><span style="font-size:15px;color:#000000">&#8224: Equal Contribution</span></center> -->
 
-        <!-- <table align=center width=800px>
+        <table align=center width=800px>
           <tr>
-            <td align=center width=150px><center><sup>1 </sup><span style="font-size:18px">IIT Kharagpur</span></center></td>
-            <td align=center width=150px><center><sup>2 </sup><span style="font-size:18px">MIT-IBM Watson AI Lab</span></center></td>
-            <td align=center width=150px><center><sup>3 </sup><span style="font-size:18px">Boston University</span></center></td>
+            <td align=center width=150px><center><sup>1 </sup><span style="font-size:18px">Carnegie Mellon University</span></center></td>
+            <td align=center width=150px><center><sup>2 </sup><span style="font-size:18px">IIT Kharagpur</span></center></td>
+            <!-- <td align=center width=150px><center><sup>3 </sup><span style="font-size:18px">Boston University</span></center></td> -->
           <tr/>
-        </table>  -->
+        </table> 
         <table align=center width=600px>
           <tr>
             <td align=center width=600px>
-            <center><span style="font-size:24px"><a href="https://xai4debugging.github.io/" target="_blank">NeurIPS 2021 workshop on explainableAI approaches for debugging and diagnosis</a></span></center></td>
+            <center><span style="font-size:24px"><a href="https://aisecure-workshop.github.io/aml-iclr2021/" target="_blank">ICLR 2021 workshop on Security and Safety in Machine Learning systems</a>, Under reviw in ICLR 2022.</span></center></td>
           <tr/>
         </table>
         <table align=center width=200px>
             <tr><td width=200px>
-              <center><a href="images/rexl.jpg"><img src = "images/rexl.jpg" width="900" height="300"></img></a><br></center>
+              <center><a href="images/poisoned_classifier.png"><img src = "images/poisoned_classifier.png" width="900" height="300"></img></a><br></center>
             </td></tr>
         </table>
 
         <center id="abstract"><h1>Abstract</h1></center>
-        Deep Learning has become overly complicated and has enjoyed stellar success in solving several classical problems like image classification, object detection, etc. Several methods for explaining these decisions have been proposed. Black-box methods to generate saliency maps are particularly interesting due to the fact that they do not utilize the internals of the model to explain the decision. Most black-box methods perturb the input and observe the changes in the output. We formulate saliency map generation as a sequential search problem and leverage upon Reinforcement Learning (RL) to accumulate evidence from input images that most strongly support decisions made by a classifier. Such a strategy encourages to search <i>intelligently</i> for the perturbations that will lead to high-quality explanations. While successful black box explanation approaches need to rely on heavy computations and suffer from small sample approximation, the deterministic policy learned by our method makes it a lot more efficient during the inference. Experiments on three benchmark datasets demonstrate the superiority of the proposed approach in inference time over state-of-the-arts without hurting the performance.<br>
+        Under a commonly-studied backdoor poisoning attack against classification models, an attacker adds a small trigger to a subset of the training data, such that the presence of this trigger at test time causes the classifier to always predict some target class. It is often implicitly assumed that the poisoned classifier is vulnerable exclusively to the adversary who possesses the trigger. In this paper, we show empirically that this view of backdoored classifiers is incorrect. We describe a new threat model for poisoned classifier, where one without knowledge of the original trigger, would want to control the poisoned classifier. Under this threat model, we propose a test-time, human-in-the-loop attack method to generate multiple effective alternative triggers without access to the initial backdoor and the training data. We construct these alternative triggers by first generating adversarial examples for a smoothed version of the classifier, created with a procedure called Denoised Smoothing, and then extracting colors or cropped portions of smoothed adversarial images with human interaction. We demonstrate the effectiveness of our attack through extensive experiments on high-resolution datasets: ImageNet and TrojAI. We also compare our approach to previous work on modeling trigger distributions and find that our method are more scalable and efficient in generating effective triggers. Last, we include a user study which demonstrates that our method allows users to easily determine the existence of such backdoors in existing poisoned classifiers. Thus, we argue that there is no such thing as a secret backdoor in poisoned classifiers: poisoning a classifier invites attacks not just by the party that possesses the trigger, but from anyone with access to the classifier.<br>
         <hr>
-
-        <!-- <center id="results0"><h1>Experimental Results Overview</h1></center>
-        <table align=center width=500px>
-            <tr><td width=500px>
-              <center><a href="images/comix_neurips2021_ucf_hmdb.png"><img src = "images/comix_neurips2021_ucf_hmdb.png" width="500" height="270"></img></a><br></center>
-            </td></tr>
-            <caption width=500px align="center"> Results on <strong>UCF-HMDB</strong> Dataset. </caption>
-          </table>
-        <br>
-        <!-- <hr> -->
-
-        <!-- <center id="results0"><h1>Experimental Results Overview</h1></center> -->
-        <!-- <table align=center width=500px>
-            <tr><td width=500px>
-              <center><a href="images/comix_neurips2021_epic_jester.png"><img src = "images/comix_neurips2021_epic_jester.png" width="700" height="160"></img></a><br></center>
-            </td></tr>
-            <caption width=500px> Results on <strong>Jester</strong> and <strong>Epic-Kitchens</strong> Datasets. </caption>
-          </table>          
-        <br>
-        <hr> --> -->
 
         
         <center id="sourceCode"><h1>Paper & Code</h1></center>
@@ -220,19 +192,15 @@
             <tr></tr>
           <tr>
             <td >
-        <a href="#"><img class="paperpreview" src="images/rexl.jpg" width="250px"/></a>
+        <a href="#"><img class="paperpreview" src="images/poisoned_classifier.png" width="250px"/></a>
           </td>
           <td></td>
           <td width=700px > <span style="font-size:20px">
-            Siddhant Agarwal, Owais Iqbal, Sree Aditya Buridi, Mada Manjusha, Abir Das<br/>
+            Minjie Sun, Siddhant Agarwal, Zico Kolter<br/>
               <a href="#">
-                  Reinforcement Explanation Learning</a> <br/> <i>1<sup>st</sup> Workshop on explainable AI approaches for debugging and diagnosis at <br> Thirty-fifth Conference on Neural Information Processing Systems (NeurIPS)</i>, 2021 <br/>
-            [<a href="#">PDF</a>]
-            [<a href="#">Supp</a>]
-            [<a href="">Video Presentation</a>]
-            [<a href="#">Poster</a>]
-              [<a href="#">Slides</a>]
-              [<a href="https://github.com/CVIR/RExL.git ">Code</a>]
+                Poisoned Classifiers are not only backdoored, they are fundamentally broken</a> <br/> <i> Workshop on Security and Safety in Machine Learning systems at <br> Ninth International Conference on Learning Representations (ICLR)</i>, 2021 <br/>
+            [<a href="https://arxiv.org/abs/2010.09080">ArXiv</a>]
+            [<a href="https://github.com/locuslab/breaking-poisoned-classifier ">Code</a>]
 
 
 </span>
