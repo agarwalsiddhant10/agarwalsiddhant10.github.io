@@ -140,56 +140,26 @@
 <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
   <head>
     <link rel="icon" type="image/png" href="resources/ucsd_logo.png">
-    <title>"Reinforcement Explanation Learning"</title>
-    <meta property='og:title' content='Reinforcement Explanation Learning' />
-    <meta property="og:description" content="Siddhant Agarwal, Owais Iqbal, Sree Aditya Buridi, Mada Manjusha, Abir Das. Reinforcement Explanation Learning." />
-    <meta property='og:url' content='https://agarwalsiddhant10/projects/comix.html' />
+    <title>"Cluster Management System"</title>
+    <meta property='og:title' content='Cluster Management System' />
+    <meta property='og:url' content='https://agarwalsiddhant10/projects/cluster_management_system.html' />
   </head>
   <body>
-        <center><span style="font-size:40px;font-weight:bold;color:#182B49">Reinforcement Explanation Learning</span></center>
+        <center><span style="font-size:40px;font-weight:bold;color:#182B49">Cluster Management System</span></center>
 
         <table align=center width=900px>
           <tr>
-            <td align=center width=180px>
-            <center><span style="font-size:20px"><a href="https://agarwalsiddhant10.github.io/" target="_blank">Siddhant Agarwal</a></span></center></td>
-            <td align=center width=180px>
-              <center><span style="font-size:20px"><a href="#" target="_blank">Owais Iqbal</a></span></center></td>
-            <td align=center width=180px>
-                <center><span style="font-size:20px"><a href="#" target="_blank">Sree Aditya Buridi</a></span></center></td>
-            <tr/>
+            <center><span style="font-size:20px">Distributed Systems Project</span></center>
          </table>
 
-         <table align=center width=600px>
-            <tr>
-              <td align=center width=150px>
-                <center><span style="font-size:20px"><a href="#" target="_blank">Mada Manjusha</a></span></center></td>
-              <td align=center width=150px>
-                <center><span style="font-size:20px"><a href="https://cse.iitkgp.ac.in/~adas/" target="_blank">Abir Das</a></span></center></td>
-        <tr/>
-      </table>
-        <!-- <center><span style="font-size:15px;color:#000000">&#8224: Equal Contribution</span></center> -->
-
-        <!-- <table align=center width=800px>
-          <tr>
-            <td align=center width=150px><center><sup>1 </sup><span style="font-size:18px">IIT Kharagpur</span></center></td>
-            <td align=center width=150px><center><sup>2 </sup><span style="font-size:18px">MIT-IBM Watson AI Lab</span></center></td>
-            <td align=center width=150px><center><sup>3 </sup><span style="font-size:18px">Boston University</span></center></td>
-          <tr/>
-        </table>  -->
-        <table align=center width=600px>
-          <tr>
-            <td align=center width=600px>
-            <center><span style="font-size:24px"><a href="https://xai4debugging.github.io/" target="_blank">NeurIPS 2021 workshop on explainableAI approaches for debugging and diagnosis</a></span></center></td>
-          <tr/>
-        </table>
         <table align=center width=200px>
             <tr><td width=200px>
-              <center><a href="images/rexl.jpg"><img src = "images/rexl.jpg" width="900" height="300"></img></a><br></center>
+              <center><a href="images/cluster_management.png"><img src = "images/cluster_management.png" width="900" height="300"></img></a><br></center>
             </td></tr>
         </table>
 
         <center id="abstract"><h1>Abstract</h1></center>
-        Deep Learning has become overly complicated and has enjoyed stellar success in solving several classical problems like image classification, object detection, etc. Several methods for explaining these decisions have been proposed. Black-box methods to generate saliency maps are particularly interesting due to the fact that they do not utilize the internals of the model to explain the decision. Most black-box methods perturb the input and observe the changes in the output. We formulate saliency map generation as a sequential search problem and leverage upon Reinforcement Learning (RL) to accumulate evidence from input images that most strongly support decisions made by a classifier. Such a strategy encourages to search <i>intelligently</i> for the perturbations that will lead to high-quality explanations. While successful black box explanation approaches need to rely on heavy computations and suffer from small sample approximation, the deterministic policy learned by our method makes it a lot more efficient during the inference. Experiments on three benchmark datasets demonstrate the superiority of the proposed approach in inference time over state-of-the-arts without hurting the performance.<br>
+        The need for more and more computation has grown exponentially over the years. It was only 10 years ago when deep learning era started and now we have models that contain more than 150 billion parameters. Every year we see better supercomputers being developed in terms of the computation power. We all are aware that the Moore's Law was saturated that means the development in cpus has slowed down. So, how exactly are the increasing demands for computation met? The answer is to combine several cpus to distribute the workload among them. Clusters are networks of several computers that can be viewed as a large very powerful computer. Each computer (called a node) is itself (ideally) a high performance computer with a powerful cpu. Resources are allocated from these computers for the jobs submitted by the user. Clusters have become an integral part of any high computing facilities.  Several modern supercomputers are infact huge clusters of compute nodes. A cluster management service or a cluster middleware is a system that manages this network of computers. It performs several necessary functions such as job scheduling, fault tolerance, load balancing etc. We discuss several possible implementation paradigms of these services. We also provide a simple prototype for the cluster management system that will perform most of the necessary functions. <br>
         <hr>
 
         <!-- <center id="results0"><h1>Experimental Results Overview</h1></center>
@@ -210,32 +180,24 @@
             <caption width=500px> Results on <strong>Jester</strong> and <strong>Epic-Kitchens</strong> Datasets. </caption>
           </table>          
         <br>
-        <hr> --> -->
+        <hr> -->
 
         
-        <center id="sourceCode"><h1>Paper & Code</h1></center>
+        <center id="sourceCode"><h1>Report & Code</h1></center>
 
 
         <table align=center width=900px>
             <tr></tr>
           <tr>
-            <td >
+            <!-- <td >
         <a href="#"><img class="paperpreview" src="images/rexl.jpg" width="250px"/></a>
-          </td>
-          <td></td>
-          <td width=700px > <span style="font-size:20px">
-            Siddhant Agarwal, Owais Iqbal, Sree Aditya Buridi, Mada Manjusha, Abir Das<br/>
-              <a href="#">
-                  Reinforcement Explanation Learning</a> <br/> <i>1<sup>st</sup> Workshop on explainable AI approaches for debugging and diagnosis at <br> Thirty-fifth Conference on Neural Information Processing Systems (NeurIPS)</i>, 2021 <br/>
-            [<a href="#">PDF</a>]
-            [<a href="#">Supp</a>]
-            [<a href="">Video Presentation</a>]
-            [<a href="#">Poster</a>]
-              [<a href="#">Slides</a>]
-              [<a href="https://github.com/CVIR/RExL.git ">Code</a>]
-
-
-</span>
+          </td> -->
+          <!-- <td></td> -->
+          <td width=700px > <center> <span style="font-size:20px">
+            [<a href="images/Cluster_Middleware.pdf">Report</a>]
+            [<a href="images/cluster_middleware_features.pdf">Design of the cluster middleware</a>]
+            [<a href="https://github.com/agarwalsiddhant10/cluster-middleware">Code</a>]
+</span></center>
         </td>
         </tr>
 
