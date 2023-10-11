@@ -197,9 +197,42 @@
   We show that several metric-based shaping rewards like L2 can be used with $s$-MaxEnt RL, providing a common ground to study such metric-based shaping rewards with efficient exploration. We find that $f$-PG has better performance compared to standard policy gradient methods on a challenging gridworld as well as the Point Maze and FetchReach environments.<br>
         <hr>
 
-        
+        <h2>Introduction</h2>
+        Goal Conditioned Reinforcement Learning requires being able to learn from spare rewards. 
+        Prior works have used a learnt reward function to augment the sparse reward but these can lead to suboptimal policies if the rewards are misaligned to the goal.
+        Divergence minimization has been extensively studied in imitation learning but its use in RL has been limited.
+        The commonly used imiatation learning methods that aim to minimize some form of divergence between the agent's visitation distribution and an expert's visitation distribution construct a minmax objective as a lower bound to the divergence.
+        Moreover, they use a discriminator to construct the reward function which is non-stationary.
+        We propose a novel framework, $f$-Policy Gradients or $f$-PG, that minimizes the $f$-divergence between the agent's state visitation distribution and the goal using analytical gradients.
+        We also show that special cases of our objective can be shown to optimize a reward (can also be a metric-based shaping reward) along with the entropy of the state-visitation distribution introducing the $state$-MaxEnt RL objective.
 
-        
+        <h2>The $f$-PG objective</h2>
+        The agents learn by minimizing the following  $f$-divergence:
+        <br><br>
+        <center>$J(\theta) = D_f(p_\theta(s) || p_g(s))$</center>
+        <br>
+        where $p_\theta(s)$ is the agent's state visitation distribution and $p_g(s)$ is the goal distribution. We can derive the analytical gradient for the objective which looks similar to policy gradients.
+        <br><br>
+        <center><img src="fpg/gradient.png" width="700" height="100"></img></center>
+        <br>
+
+        <h2>$state$-MaxEnt RL</h2>
+
+        We present the following Lemma which states that special case of $f$-PG ($f(u) = u\log{u}$), the agent maximizes a reward of $\log{p_g(s)}$ along with the entropy of the state visitation distribution.
+        This is different from the commonly studied MaxEnt RL (which will will call $\pi$-MaxEnt RL) which maximizes the entropy of the policy.
+        <br><br>
+        <center><img src="fpg/fkl.png" width="700" height="50"></img></center>
+        <br>
+        Consider a gridworld where the agent start and goal distributions are seperated by a wall, making the agent necessary to travel around the wall to reach the goal.
+        The exploration of the $\pi$-MaxEnt RL and $s$-MaxEnt RL agents vary as shown below (the evolution of the state-visitation distributions)
+
+        <h2>Learning Signals</h2>
+        $f$-PG involves a learning signal $f'(\frac{p_\theta(s)}{p_g(s)})$ to weigh the log probabilities of the policy. 
+        It is thus important to understand how $f'(\frac{p_\theta(s)}{p_g(s)})$ behaves for goal-conditioned RL settings. 
+        During the initial stages of training, the agent visits regions with very low $p_g$. For such states, the signal has a lower value than the states that have lower $p_\theta$, i.e., the unexplored states. 
+        This is because for any convex function $f$, $f'(x)$ is an increasing function, so minimizing $f'(\frac{p_\theta(s)}{p_g(s)})$ (recall that we are minimizing $f$-divergence) will imply minimizing $p_\theta(s)$ for the states with low $p_g(s)$. 
+        The only way to do this is to increase the entropy of the state-visitation distribution, directly making the agent explore new states. 
+        As long as there is no significant overlap between the two distributions, it will push $p_\theta$ down to a flatter distribution until there is enough overlap with the goal distribution when it will pull back the agent's visitation again to be closer to the goal distribution.
         <center id="sourceCode"><h1>Paper & Code</h1></center>
 
 
