@@ -111,6 +111,16 @@ name {
   position: relative;
 }
 
+.vc{
+  margin: 0;
+     position: absolute;
+     top: 50%;
+     -moz-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+     -webkit-transform: translateX(-50%) translateY(-50%) rotate(-90deg);
+     transform: translateX(-50%) translateY(-50%) rotate(270deg);
+     left: 50%;
+ }
+
 .two {
   width: 160px;
   height: 160px;
@@ -128,4 +138,12 @@ name {
 
 span.highlight {
   background-color: #ffffd0;
+}
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }

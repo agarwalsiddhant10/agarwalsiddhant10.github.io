@@ -148,7 +148,7 @@
       MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
     </script>
     <script type="text/javascript"
-      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+      src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML">
     </script>
   </head>
   <body>
@@ -169,10 +169,10 @@
 
         <!-- <center><span style="font-size:15px;color:#000000">&#8224: Equal Contribution</span></center> -->
 
-        <table align=center width=600px>
+        <table align=center>
           <tr>
-            <td align=center width=300px><center><sup>1 </sup><span style="font-size:18px">The University of Texas at Austin</span></center></td>
-            <td align=center width=300px><center><sup>2 </sup><span style="font-size:18px">Sony AI</span></center></td>
+            <td align=center style="white-space:nowrap;padding:10px"><center><sup>1 </sup><span style="font-size:18px">The University of Texas at Austin</span></center></td>
+            <td align=center style="white-space:nowrap;padding:10px"><center><sup>2 </sup><span style="font-size:18px">Sony AI</span></center></td>
           <tr/>
         </table> 
         <table align=center width=600px>
@@ -181,6 +181,14 @@
             <center><span style="font-size:24px"><a href="https://neurips.cc/Conferences/2023" target="_blank">Thirty-seventh Conference on Neural Information Processing Systems (NeurIPS) 2023</a> </span></center></td>
           <tr/>
         </table>
+        <table align=center>
+          <tr>
+            <td align=center style="white-space:nowrap;padding:10px"><center><span style="font-size:18px"><a href="https://arxiv.org/abs/2310.06794v1">Paper</a></span></center></td>
+            <td align=center style="white-space:nowrap;padding:10px"><center><span style="font-size:18px"><a href="#">Code</a></span></center></td>
+            <td align=center style="white-space:nowrap;padding:10px"><center><span style="font-size:18px"><a href="#">Presentation (Coming Soon)</a></span></center></td>
+            <td align=center style="white-space:nowrap;padding:10px"><center><span style="font-size:18px"><a href="#">Slides (Coming Soon)</a></span></center></td>
+          <tr/>
+        </table> 
         <!-- <table align=center width=200px>
             <tr><td width=200px>
               <center><a href="images/bpr.png"><img src = "images/bpr.png" width="900" height="300"></img></a><br></center>
@@ -225,6 +233,21 @@
         <br>
         Consider a gridworld where the agent start and goal distributions are seperated by a wall, making the agent necessary to travel around the wall to reach the goal.
         The exploration of the $\pi$-MaxEnt RL and $s$-MaxEnt RL agents vary as shown below (the evolution of the state-visitation distributions)
+        <br>
+        <table align="center" width="800px">
+        <tr>
+          <td align=center style="padding:20px;width:350px;vertical-align:middle">
+            <img src="fpg/softq_vis.gif" width=300px></img>
+            <br>
+            <center>$\pi$-MaxEnt RL</center></td>
+            </td>
+            <td align=center style="padding:20px;width:350px;vertical-align:middle">
+             <img src="fpg/fkl_vis.gif" width=300px></img>
+              <br>
+              <center>$s$-MaxEnt RL</center></td>
+            </td>
+          <tr/>
+       </table>
 
         <h2>Learning Signals</h2>
         $f$-PG involves a learning signal $f'(\frac{p_\theta(s)}{p_g(s)})$ to weigh the log probabilities of the policy. 
@@ -233,33 +256,113 @@
         This is because for any convex function $f$, $f'(x)$ is an increasing function, so minimizing $f'(\frac{p_\theta(s)}{p_g(s)})$ (recall that we are minimizing $f$-divergence) will imply minimizing $p_\theta(s)$ for the states with low $p_g(s)$. 
         The only way to do this is to increase the entropy of the state-visitation distribution, directly making the agent explore new states. 
         As long as there is no significant overlap between the two distributions, it will push $p_\theta$ down to a flatter distribution until there is enough overlap with the goal distribution when it will pull back the agent's visitation again to be closer to the goal distribution.
-        <center id="sourceCode"><h1>Paper & Code</h1></center>
+        <br><br><br>
+        <table align="center" width="1100px">
+          <tr height="205px">
+            <td valign="middle" style="padding:10px;width=50px;">
+              <p style="transform:rotate(-90.0deg)">$f'\big(\frac{p_\theta(s)}{p_g(s)}\big)$</p>
+            </td>
+            <td rowspan="2" align=center style="padding:10px;width:250px;vertical-align:middle">
+              <img src="fpg/fkl_reach_vis.gif" width=240px></img>
+              <br>
+              <center>Forward KL</center></td>
+              </td>
+              <td rowspan="2" align=center style="padding:10px;width:250px;vertical-align:middle">
+               <img src="fpg/rkl_reach_vis.gif" width=240px></img>
+                <br>
+                <center>Reverse KL</center></td>
+              </td>
+              <td rowspan="2" align=center style="padding:10px;width:250px;vertical-align:middle">
+                <img src="fpg/js_reach_vis.gif" width=240px></img>
+                 <br>
+                 <center>Jenson Shanon</center></td>
+               </td>
+               <td rowspan="2" align=center style="padding:10px;width:250px;vertical-align:middle">
+                <img src="fpg/chi2_reach_vis.gif" width=240px></img>
+                 <br>
+                 <center>$\chi^2$</center>
+                </td>
+              </tr>
+            <tr height="195px">
+            <td valign="middle" style="padding:10px;width=50px;">
+              <p style="transform:rotate(-90.0deg)">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp$p_\theta(s)$</p>
+            </td>
+            <!-- <td align="center" style="padding:10px;width=50px;transform:rotate(-90.0deg)">
+              $f'\big(\frac{p_\theta(s)}{p_g(s)}\big)$
+            </td> -->
+            <!-- <td align="center" style="padding:10px;width=50px;transform:rotate(-90.0deg)">
+              $f'\big(\frac{p_\theta(s)}{p_g(s)}\big)$
+            </td>
+            <td align="center" style="padding:10px;width=50px;transform:rotate(-90.0deg)">
+              $f'\big(\frac{p_\theta(s)}{p_g(s)}\big)$
+            </td>
+            <td align="center" style="padding:10px;width=50px;transform:rotate(-90.0deg)">
+              $f'\big(\frac{p_\theta(s)}{p_g(s)}\big)$
+            </td> -->
+            </tr>
+         </table>
 
+        <h2>Results</h2>
 
-        <table align=center width=900px>
-            <tr></tr>
+        We compare $f$-PG with several previous works that have used distribution matching to provide some shaped rewards like AIM, GAIL, AIRL etc. 
+        We initially perform experiments on a gridworld followed by Point Maze and FetchReach environments.
+        
+        <h3>Gridworld</h3>
+        Here, the baselines are implemented on top of Soft Q Learning which is a $\pi$-MaxEnt RL algorithm. 
+        <table align="center" width="1000px">
           <tr>
-            <!-- <td >
-        <a href="#"><img class="paperpreview" src="images/bpr.png" width="250px"/></a>
-          </td> -->
-          <!-- <td></td> -->
-          <td width=1000px > <span style="font-size:20px">
-            Siddhant Agarwal, Ishan Durugkar, Peter Stone, Amy Zhang<br/>
-              <a href="#">
-                f-Policy Gradients: A General Framework for Goal Conditioned RL using f-Divergences</a> <br/> <i>37<sup>th</sup>Conference on Neural Information Processing Systems (NeurIPS)</i>, 2023 <br/>
-            [<a href="#">PDF</a>]
-            [<a href="#">Video Presentation</a>]
-            [<a href="#">Poster</a>]
-              [<a href="#">Slides</a>]
+            <td align=center style="padding:10px;width:320px;vertical-align:middle">
+              <img src="fpg/fkl_grid.jpg" width=300px></img>
+              <br>
+              <center>$fkl$-PG</center></td>
+              </td>
+              <td align=center style="padding:10px;width:320px;vertical-align:middle">
+               <img src="fpg/rkl_grid.jpg" width=300px></img>
+                <br>
+                <center>$rkl$-PG</center></td>
+              </td>
+              <td align=center style="padding:10px;width:320px;vertical-align:middle">
+                <img src="fpg/aim.jpg" width=300px></img>
+                 <br>
+                 <center>AIM</center></td>
+               </td>
+              </tr>
 
+              <tr>
+                <td align=center style="padding:10px;width:320px;vertical-align:middle">
+                  <img src="fpg/gail.jpg" width=300px></img>
+                  <br>
+                  <center>GAIL</center></td>
+                  </td>
+                  <td align=center style="padding:10px;width:320px;vertical-align:middle">
+                   <img src="fpg/airl.jpg" width=300px></img>
+                    <br>
+                    <center>AIRL</center></td>
+                  </td>
+                  <td align=center style="padding:10px;width:320px;vertical-align:middle">
+                    <img src="fpg/fairl.jpg" width=300px></img>
+                     <br>
+                     <center>FAIRL</center></td>
+                   </td>
+                  </tr>
+                </table>
 
-</span>
-        </td>
-        </tr>
+          <h3>Point Maze and FetchReach</h3>
+          In these experiments, the baselines are implemented on top of an on-policy PPO to provide a fair comparison with the sample complexity.
 
-      </table>
+          <table align="center" width="1000px">
+            <tr>
+              <td align=center style="padding:10px;width:900px;vertical-align:middle">
+                <img src="fpg/pointmaze.png" width=900px></img>
+              </td>
+            </tr>
+            <tr>
+              <td align=center style="padding:10px;width:900px;vertical-align:middle">
+                <img src="fpg/pointmaze_fetch.png" width=900px></img>
+              </td>
+            </tr>
+          </table>
 
-      <br>
       <hr>
 
       <br/>
