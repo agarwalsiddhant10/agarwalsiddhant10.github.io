@@ -20,10 +20,14 @@
               <p style="text-align:center">
                 <name>Siddhant Agarwal</name>
               </p>
-              <p>I am a second year Ph.D. student in the Computer Science Department at University of Texas at Austin, working with <a href="https://amyzhang.github.io/">Prof. Amy Zhang</a> and <a href="https://www.cs.utexas.edu/~pstone/index.shtml">Prof. Peter Stone</a>. 
-                I completed my Dual Degree (B.Tech. + M.Tech.) in Computer Science and Engineering from the Indian Institute of Technology Kharagpur with a department rank 1. 
-                My research interests include goal conditioned reinforcement learning and representation learning. 
-                I like to view reinforcement learning from state-visitation distributions perspective and look to extend RL as a distribution matching problem. I am also interested in principled algoritms for learning state abstractions or representations that are useful for unknown downstream tasks.
+              <p>I am a third year Ph.D. student in the Computer Science Department at University of Texas at Austin, working with <a href="https://amyzhang.github.io/">Prof. Amy Zhang</a> and <a href="https://www.cs.utexas.edu/~pstone/index.shtml">Prof. Peter Stone</a>. 
+                I am interested in utilizing reward-free transitions for improving reinforcement learning be it through designing principled representation learning techniques or downstream algorithms independent of rewards. 
+                For this I have been looking at RL from the perspective of visitation distributions and utilizing unsupervised RL, goal-conditioned RL and distribution matching learning techniques. 
+                Previously, I completed my Dual Degree (B.Tech. + M.Tech.) in Computer Science and Engineering from the Indian Institute of Technology Kharagpur with a department rank 1. 
+                During my undergrad, I was a leading member of the Autonomous Ground Vehicles research group where I worked on a number of perception and planning projects for autonomous driving.
+                I completed my bachelor thesis on "Reinforcement Explanation Learning" under the supervision of <a href="https://cse.iitkgp.ac.in/~adas/">Prof. Abir Das</a>. 
+                <!-- My research interests include goal conditioned reinforcement learning and representation learning.  -->
+                <!-- I like to view reinforcement learning from state-visitation distributions perspective and look to extend RL as a distribution matching problem. I am also interested in principled algoritms for learning state abstractions or representations that are useful for unknown downstream tasks. -->
                 <!-- I have spent time at the Autonomous Ground Vehicle Research Group at IIT Kharagpur. I was also a part of the Computer Vision and Intelligence Research Lab where I worked with <a href="https://cse.iitkgp.ac.in/~adas/">Prof. Abir Das</a> on RL and explainable AI for two years. I have interned under <a href="https://zicokolter.com/">Prof. Zico Kolter</a> where I worked on adversarial robustness. I have also worked on the conjugation on knowledge graph reasoning and reinforcement learning with <a href="https://shanzhenren.github.io/">Prof. Xiang Ren</a>. I worked with <a href="https://agarwl.github.io/">Rishabh Agarwal</a> and <a href="https://mila.quebec/en/person/aaron-courville/">Prof. Aaron Courville</a> on generalization in reinforcement learning in 2021. -->
 
               </p>
@@ -62,7 +66,7 @@
             <td style="padding:20px;width:100%;vertical-align:middle">
               <heading>Research</heading>
               <p>
-                My primary research interests are reinforcement learning and robot learning. I aim to develop effective data-driven RL algorithms. I want to work at the intersection of offline RL and model-based RL in the areas of generalisability of algorithms and address safety in exploration.
+                My primary research interests are reinforcement learning and robot learning. I aim to develop effective da  ta-driven RL algorithms. I want to work at the intersection of offline RL and model-based RL in the areas of generalisability of algorithms and address safety in exploration.
 
               </p>
             </td>
@@ -78,6 +82,87 @@
         </tbody></table>
 
         <!-- Papers list -->
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
+           <td style="padding:20px;width:25%;vertical-align:middle">
+             <img src="images/rlzero.png" width="160" height="100">
+           </td>
+           <td width="75%" valign="middle">
+             <a href="https://arxiv.org/abs/2412.05718l">
+               <papertitle>RLZero: Zero Shot Language to Behaviors without Any Supervision</papertitle>
+             </a>
+             <br> Harshit Sikchi*, Siddhant Agarwal*, Pranaya Jajoo*, Samyak Parajuli*, Max Rudolph*, Peter Stone, Amy Zhang, Scott Niekum
+               <br><i>* denotes equal contribution</i><br>
+             <em>Under Submission ICML 2025</em><br>
+             <a href="https://hari-sikchi.github.io/rlzero/">project page</a> /
+             <a href="https://arxiv.org/abs/2412.05718">paper</a> 
+             <!-- <a href="https://youtu.be/EpH175PY1A0">video</a> / -->
+             <p> We introduce a framework for unsupervised RL to produce optimal policies for any language instruction.</p>
+           </td>
+         </tr> </tbody></table>
+
+         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
+           <td style="padding:20px;width:25%;vertical-align:middle">
+             <img src="images/psm.png" width="160" height="100">
+           </td>
+           <td width="75%" valign="middle">
+             <a href="https://agarwalsiddhant10.github.io/projects/psm.html">
+               <papertitle>Proto Successor Measure: Representing the Behavior Space of an RL Agent</papertitle>
+             </a>
+             <br> Siddhant Agarwal*, Harshit Sikchi*, Peter Stone, Amy Zhang
+               <br><i>* denotes equal contribution</i><br>
+             <em>Under Submission ICML 2025</em><br>
+             <a href="https://agarwalsiddhant10.github.io/projects/psm.html">project page</a> /
+             <a href="https://arxiv.org/abs/2411.19418">paper</a> 
+             <!-- <a href="https://youtu.be/EpH175PY1A0">video</a> / -->
+             <!-- <a href="https://github.com/agarwalsiddhant10/f-pg">code</a> -->
+             <p> We provide a representation that can produce optimal policies for any reward function in the environment.</p>
+           </td>
+         </tr> </tbody></table>
+
+         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
+           <td style="padding:20px;width:25%;vertical-align:middle">
+             <img src="images/robocup.png" width="160" height="100">
+           </td>
+           <td width="75%" valign="middle">
+             <a href="https://agarwalsiddhant10.github.io/index.html">
+               <papertitle>Reinforcement Learning Within the Classical Robotics Stack: A Case Study in Robot Soccer</papertitle>
+             </a>
+             <br> Adam Labiosa∗, Zhihan Wang∗, Siddhant Agarwal, William Cong, Geethika Hemkumar, Abhinav Narayan Harish,Benjamin Hong, Josh Kelle, Chen Li, Yuhao Li, Zisen Shao, Peter Stone, Josiah P. Hanna
+               <br><i>* denotes equal contribution, authors in alphabetical order</i><br>
+             <em>ICRA 2025</em><br>
+             <a href="https://agarwalsiddhant10.github.io/index.html">project page</a> /
+             <a href="https://arxiv.org/abs/2412.09417">paper</a> /
+             <!-- <a href="https://youtu.be/EpH175PY1A0">video</a> / -->
+             <a href="https://github.com/wistex-united/wistex-system-2024">code</a>
+             <p> The Robotics stack used by our RoboCup Standard Platform League that used RL to train high level abstracted robotics behavior. </p>
+           </td>
+         </tr> </tbody></table>
+
+         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
+           <td style="padding:20px;width:25%;vertical-align:middle">
+             <img src="images/airhockey.png" width="160" height="100">
+           </td>
+           <td width="75%" valign="middle">
+             <a href="https://rlairhockey.github.io">
+               <papertitle>Robot Air Hockey: A Manipulation Testbed for Robot Learning with Reinforcement Learning</papertitle>
+             </a>
+             <br> Caleb Chuck∗, Carl Qi∗, Michael J. Munje∗, Shuozhe Li∗, Max Rudolph∗, Chang Shi∗, Siddhant Agarwal∗,
+             Harshit Sikchi∗, Abhinav Peri, Sarthak Dayal, Evan Kuo, Kavan Mehta, Anthony Wang, Peter Stone,
+             Amy Zhang, Scott Niekum
+               <br><i>* denotes equal contribution</i><br>
+             <em>CRA Workshop Manipulation Skills, 2024</em><br>
+             <a href="https://rlairhockey.github.io">project page</a> /
+             <a href="https://arxiv.org/pdf/2405.03113">paper</a> /
+             <!-- <a href="https://youtu.be/EpH175PY1A0">video</a> / -->
+             <a href="https://github.com/YOUR%20REPO%20HERE">code</a>
+             <p> A two stage simulator and real-world manipulator system designed as a air-hockey for to study effects of RL and IL. </p>
+           </td>
+         </tr> </tbody></table>
+
             <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
            <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
             <td style="padding:20px;width:25%;vertical-align:middle">
@@ -85,7 +170,7 @@
             </td>
             <td width="75%" valign="middle">
               <a href="https://agarwalsiddhant10.github.io/projects/fpg.html">
-                <papertitle>f-Policy Gradients: A General Framework for Goal Conditioned RL using f-Divergences</papertitle>
+                <papertitle>f-Policy Gradients: A General Fr  amework for Goal Conditioned RL using f-Divergences</papertitle>
               </a>
               <br> Siddhant Agarwal, Ishan Durugkar, Peter Stone, Amy Zhang
                 <br>
@@ -190,6 +275,7 @@
                </a>
                <br>
                  Rishabh Madan*, Deepank Agrawal*, Shreyas Kowshik*, Harsh Maheshwari*, Siddhant Agarwal*, Debashish Chakravarty<br>
+                 <i>* denotes equal contribution, dice roll</i><br>
                <em>International Conference on Pattern Recognition Application and Methods</em>, Prague, 2019<br>
                <a href="https://agarwalsiddhant10.github.io/projects/traffic_sign_classification.html">project page</a> /
                <a href="https://www.scitepress.org/Papers/2019/73925/73925.pdf">paper</a> /
