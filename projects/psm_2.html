@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Proto Successor Measure (Extended Notes)</title>
+  <meta property="og:title" content="Proto Successor Measure: Extended Notes" />
+  <meta property="og:description" content="Detailed project page with intuitions, theorem statements, equations, and result summaries for Proto Successor Measure." />
+  <meta property="og:url" content="https://agarwalsiddhant10.github.io/projects/psm_2.html" />
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet" type="text/css" />
+
+  <style>
+    :root {
+      --text: #1f2937;
+      --muted: #4b5563;
+      --brand: #1367a7;
+      --border: #e5e7eb;
+      --panel: #f8fafc;
+      --title: #182b49;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Titillium Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.65;
+    }
+
+    .container {
+      width: min(1100px, 94vw);
+      margin: 24px auto 56px auto;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      color: var(--title);
+      margin-top: 28px;
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      text-align: center;
+      margin-top: 8px;
+    }
+
+    h2 {
+      font-size: 30px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+
+    h3 {
+      font-size: 24px;
+    }
+
+    p {
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #208799;
+      text-decoration: underline;
+    }
+
+    .authors, .affiliations, .quick-links {
+      text-align: center;
+      margin-top: 8px;
+      color: var(--muted);
+    }
+
+    .quick-links a {
+      margin: 0 10px;
+      font-weight: 600;
+    }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 18px;
+      margin-top: 14px;
+    }
+
+    .theorem {
+      border: 2px solid var(--brand);
+      background: #f4f9ff;
+      padding: 16px 20px;
+      margin: 18px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(19, 103, 167, 0.1);
+    }
+    
+    .theorem strong {
+      display: block;
+      color: var(--brand);
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
+    .eq {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      margin: 10px 0;
+      overflow-x: auto;
+    }
+
+    .image-todo {
+      border: 2px dashed #9ca3af;
+      border-radius: 10px;
+      padding: 22px;
+      text-align: center;
+      color: var(--muted);
+      margin: 14px 0;
+      background: #fcfcfd;
+    }
+
+    ul {
+      margin-top: 8px;
+      margin-bottom: 12px;
+    }
+
+    li {
+      margin: 6px 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 12px;
+      margin-bottom: 12px;
+      font-size: 17px;
+    }
+
+    th, td {
+      border: 1px solid var(--border);
+      padding: 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      background: #f3f4f6;
+      font-weight: 600;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.35), rgba(0,0,0,0));
+      margin: 26px 0;
+    }
+
+    .footnote {
+      color: var(--muted);
+      font-size: 15px;
+    }
+  </style>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Proto Successor Measure<br/>Extended Project Notes</h1>
+
+    <div class="authors">
+      Siddhant Agarwal, Harshit Sikchi, Peter Stone, Amy Zhang
+    </div>
+    <div class="affiliations">
+      The University of Texas at Austin · Sony AI
+    </div>
+    <div class="quick-links">
+      <a href="https://arxiv.org/abs/2411.19418" target="_blank">Paper</a>
+      <a href="https://github.com/agarwalsiddhant10/PSM" target="_blank">Code</a>
+      <a href="../projects/psm.html">Original Project Page</a>
+    </div>
+
+    <div class="panel">
+      <strong>One-line summary.</strong>
+      Proto Successor Measure (PSM) provides a policy-independent basis for occupancy behavior in an MDP, enabling zero-shot adaptation to new reward functions by solving only for basis coefficients at test time.
+    </div>
+
+    <h2>1. Motivation and Intuition</h2>
+    <p>
+      A core goal in reinforcement learning is <em>behavior reuse</em>: after reward-free exploration, the agent should solve many downstream tasks without additional environment interactions.
+      Traditional approaches often tie representation quality to a specific reward family or policy class. PSM asks a more structural question:
+      <strong>Can we represent all possible long-horizon behaviors using a compact, reward-agnostic basis?</strong>
+    </p>
+    <p>
+      The key intuition is geometric: each policy induces an occupancy/visitation object. The set of feasible occupancies forms a constrained set in a high-dimensional space. PSM characterizes this set through policy-independent basis elements, so downstream control can be reframed as selecting coefficients in that basis.
+    </p>
+
+    <div class="image-todo">
+      <strong>TODO (Figure 1):</strong> Add an intuition diagram of occupancy geometry and basis decomposition.<br/>
+      Suggested filename: <code>psm/intuition_geometry.png</code>
+    </div>
+
+    <h2>2. Formal Setup</h2>
+    <p>
+      Consider a discounted MDP $\mathcal{M}=(\mathcal{S},\mathcal{A},P,\gamma)$ with $\gamma\in(0,1)$. For a policy $\pi$, define the discounted occupancy measure:
+    </p>
+    <div class="eq">
+      $$d^{\pi}_{\gamma}(s,a) = (1-\gamma)\sum_{t=0}^{\infty}\gamma^t\Pr_{\pi}(s_t=s,a_t=a).$$
+    </div>
+    <p>
+      For reward $r(s,a)$, the normalized control objective is:
+    </p>
+    <div class="eq">
+      $$J_r(\pi)=\mathbb{E}_{(s,a)\sim d^{\pi}_{\gamma}}[r(s,a)] = \langle r, d^{\pi}_{\gamma} \rangle.$$
+    </div>
+    <p>
+      Thus, control over rewards reduces to selecting the right occupancy $d^{\pi}_{\gamma}$ from the feasible occupancy set.
+    </p>
+
+    <h3>Proto Successor Measure Parameterization</h3>
+    <p>
+      PSM introduces a policy-independent affine parameterization of occupancies:
+    </p>
+    <div class="eq">
+      $$d^{\pi}_{\gamma} \approx d_0 + \sum_{k=1}^{K} w_k(\pi)\,\phi_k,$$
+    </div>
+    <p>
+      where $d_0$ is an offset occupancy, $\{\phi_k\}_{k=1}^{K}$ are proto basis elements (learned from reward-free data), and $w(\pi)\in\mathbb{R}^K$ are policy-dependent coefficients.
+    </p>
+
+    <h2>3. Main Theoretical Statements</h2>
+
+    <div class="theorem">
+      <strong>Theorem 1 (Behavior-space representation, informal).</strong>
+      Under the paper’s assumptions, every feasible discounted occupancy can be expressed within an affine span induced by policy-independent proto measures.
+      Equivalently, the policy-induced behavior space admits a basis-like decomposition where reward appears only in downstream coefficient selection.
+    </div>
+
+    <div class="theorem">
+      <strong>Theorem 2 (Zero-shot reward transfer, informal).</strong>
+      Given a learned PSM basis with sufficient approximation quality, solving a downstream reward optimization over basis coefficients recovers the corresponding near-optimal occupancy (and policy) without further interaction data from the environment.
+    </div>
+
+    <div class="theorem">
+      <strong>Theorem 3 (Approximation-to-control link, informal).</strong>
+      If occupancy reconstruction error is bounded by $\varepsilon$ in the representation norm used by the method, then downstream value suboptimality is bounded proportionally to $\varepsilon$ and reward norm terms.
+    </div>
+
+    <p class="footnote">
+      Note: The statements above are intentionally high-level; insert exact assumptions and constants from the paper for a camera-ready theorem section.
+    </p>
+
+    <h2>4. Optimization View</h2>
+    <p>
+      With basis matrix $\Phi=[\phi_1,\dots,\phi_K]$, downstream planning is recast as coefficient optimization:
+    </p>
+    <div class="eq">
+      $$\max_{w\in\mathbb{R}^{K}}\;\langle r, d_0 + \Phi w \rangle\quad\text{s.t.}\quad d_0 + \Phi w\in\mathcal{D}_{\text{feasible}},$$
+    </div>
+    <p>
+      where $\mathcal{D}_{\text{feasible}}$ encodes occupancy constraints (flow conservation, non-negativity, normalization).
+      This separates <em>representation learning</em> (offline, reward-free) from <em>task solving</em> (fast coefficient solve).
+    </p>
+
+    <h3>Practical Learning Objective (template)</h3>
+    <p>
+      A generic training template is to fit basis components that reconstruct occupancies collected during reward-free exploration:
+    </p>
+    <div class="eq">
+      $$\min_{\theta}\;\mathbb{E}_{d\sim\mathcal{B}}\Big[\|d - d_{0,\theta} - \Phi_{\theta}\,\beta_{\theta}(d)\|_2^2\Big] + \lambda\,\mathcal{R}(\theta).$$
+    </div>
+    <p>
+      Here, $\beta_{\theta}(d)$ gives coefficients for each sampled occupancy object and $\mathcal{R}$ denotes regularization. Replace this with the exact objective/constraints implemented in your codebase.
+    </p>
+
+    <div class="image-todo">
+      <strong>TODO (Figure 2):</strong> Add method pipeline figure (reward-free data → basis learning → zero-shot reward solve).<br/>
+      Suggested filename: <code>psm/pipeline.png</code>
+    </div>
+
+    <h2>5. Why This Works (Intuition)</h2>
+    <ul>
+      <li><strong>Decoupling:</strong> environment dynamics are encoded once in basis functions; reward-specific adaptation happens only in coefficient space.</li>
+      <li><strong>Linear reward structure:</strong> expected return is linear in occupancy, so linear combinations of basis occupancies naturally support fast reward re-targeting.</li>
+      <li><strong>Coverage from reward-free data:</strong> broad exploration gives support over behavior modes needed for diverse downstream rewards.</li>
+      <li><strong>Reusable computation:</strong> expensive interaction and representation learning are amortized across tasks.</li>
+    </ul>
+
+    <h2>6. Experimental Results (Extended Summary)</h2>
+    <p>
+      The paper reports strong zero-shot transfer behavior under reward changes after reward-free training. Use this section to present your exact benchmark suite and metrics.
+    </p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Environment</th>
+          <th>Metric</th>
+          <th>PSM (Ours)</th>
+          <th>Best Baseline</th>
+          <th>Relative Gain</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>TODO: e.g., DMControl task A</td>
+          <td>Normalized Return</td>
+          <td>TODO</td>
+          <td>TODO</td>
+          <td>TODO</td>
+        </tr>
+        <tr>
+          <td>TODO: e.g., DMControl task B</td>
+          <td>Success Rate</td>
+          <td>TODO</td>
+          <td>TODO</td>
+          <td>TODO</td>
+        </tr>
+        <tr>
+          <td>TODO: e.g., Maze / locomotion</td>
+          <td>AUC over tasks</td>
+          <td>TODO</td>
+          <td>TODO</td>
+          <td>TODO</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="image-todo">
+      <strong>TODO (Figure 3):</strong> Main comparison plot (PSM vs baselines over tasks).<br/>
+      Suggested filename: <code>psm/main_results.png</code>
+    </div>
+
+    <div class="image-todo">
+      <strong>TODO (Figure 4):</strong> Ablation plot (basis size $K$, data budget, and regularization sensitivity).<br/>
+      Suggested filename: <code>psm/ablations.png</code>
+    </div>
+
+    <h3>Ablation Questions to Highlight</h3>
+    <ul>
+      <li>How does performance scale with basis size $K$?</li>
+      <li>How sensitive is transfer to reward-free dataset coverage?</li>
+      <li>What is the tradeoff between coefficient sparsity and control quality?</li>
+      <li>How robust is coefficient optimization under reward misspecification?</li>
+    </ul>
+
+    <h2>7. Practical Notes for Reproducibility</h2>
+    <ul>
+      <li>State exactly how reward-free trajectories are collected (policy class, horizon, seeds, interaction budget).</li>
+      <li>Specify occupancy parameterization and discretization/feature map details.</li>
+      <li>Report basis learning hyperparameters and coefficient solver details.</li>
+      <li>Include wall-clock and GPU budget for offline training and test-time adaptation.</li>
+    </ul>
+
+    <h2>8. Limitations and Open Directions</h2>
+    <ul>
+      <li>Behavior-space coverage can degrade in sparse-reachability regions without sufficient exploration.</li>
+      <li>Large or continuous spaces may require structured bases and scalable solvers.</li>
+      <li>Constraint handling in occupancy space can be numerically delicate in practice.</li>
+      <li>Future work: hierarchical proto-measures, uncertainty-aware basis selection, and online basis refinement.</li>
+    </ul>
+
+    <hr />
+
+    <p class="footnote">
+      Page version: extended explanation draft for PSM.<br/>
+      Please replace all TODO placeholders (figures, exact theorem constants, benchmark numbers) with finalized content from your paper artifacts.
+    </p>
+  </div>
+</body>
+</html>

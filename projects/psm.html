@@ -129,6 +129,22 @@
       transform: translateY(-50%);
   }
 
+    .theorem {
+      border: 2px solid var(--brand);
+      background: #f4f9ff;
+      padding: 16px 20px;
+      margin: 18px 0;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(19, 103, 167, 0.1);
+    }
+    
+    .theorem strong {
+      display: block;
+      color: var(--brand);
+      margin-bottom: 8px;
+      font-size: 19px;
+    }
+
   hr
   {
     border: 0;
@@ -201,7 +217,7 @@
             <td align=center style="white-space:nowrap;padding:10px"><center><span style="font-size:18px"><a href="https://arxiv.org/abs/2411.19418">Paper</a></span></center></td>
             <td align=center style="white-space:nowrap;padding:10px"><center><span style="font-size:18px"><a href="https://github.com/agarwalsiddhant10/PSM">Code</a></span></center></td>
             <!-- <td align=center style="white-space:nowrap;padding:10px"><center><span style="font-size:18px"><a href="#">Presentation (Coming Soon)</a></span></center></td> -->
-            <td align=center style="white-space:nowrap;padding:10px"><center><span style="font-size:18px"><a href="#">Slides (Coming Soon)</a></span></center></td>
+            <!-- <td align=center style="white-space:nowrap;padding:10px"><center><span style="font-size:18px"><a href="#">Slides</a></span></center></td> -->
           <tr/>
         </table> 
         <!-- <table align=center width=200px>
@@ -220,11 +236,49 @@
         We derive a practical algorithm to learn these basis functions using reward-free interaction data from the environment and show that our approach can produce the optimal policy at test time for any given reward function without additional environmental interactions.  
         
 
-        <center><img src="psm/psm.png" width="800" height="400"></img></center>
+        <center><img src="psm/psm.png" width="800" height="300"></img></center>
         
         <hr>
 
+  <h2>Background</h2>
+    <p>
+      Consider a discounted reward-free MDP $\mathcal{M}=(\mathcal{S},\mathcal{A},P,\gamma)$. For a policy $\pi$, define the visitation distribution $d^{\pi}$:
+    <div class="eq">
+      $$d^{\pi}(s,a) = (1-\gamma)\sum_{t=0}^{\infty}\gamma^t\Pr^{\pi}(s_t=s,a_t=a).$$
+    </div>
+
+    Similarly define the Successor Measure $M^{\pi}$ as:
+    <div class="eq">
+      $$M^{\pi}_{\gamma}(s,a,s^+, a^+) = (1-\gamma)\sum_{t=0}^{\infty}\gamma^t\Pr^{\pi}(s_t=s^+, a_t=a^+|s_0=s,a_0=a).$$
+    </div>
+    <p>
+      For reward $r(s,a)$, the linear program for the optimal policy is:
+    </p>
+    <div class="eq">
+      $$J_r(\pi)=\mathbb{E}_{(s,a)\sim d^{\pi}}[r(s,a)] = \langle r, d^{\pi} \rangle.$$
+    </div>
+    <p>
+      Thus, control over rewards reduces to selecting the right occupancy $d^{\pi}$ from the feasible occupancy set.
+    </p>
+
+  <h2>Proto Successor Measure</h2>
+
+  <p>
+    Any visitation distribution $d^{\pi}$ or successor measure $M^\pi$ is a solution of the Bellman flow constraints:
+  </p>
+  <div class="eq">
+    $$\sum_a d(s,a) = (1-\gamma)\mu(s) + \gamma\sum_{s',a'}P(s|s',a')d(s',a')$$
+  </div>
+
+  <div class="eq">
+    $$\sum_{a'}M(s,a,s^+, a^+) = (1-\gamma) \delta(s^+ = s, a^+ = a) + \gamma\sum_{s',a'}P(s^+|s',a')M(s,a,s', a')$$
         
+
+  <div class="theorem">
+      Any successor measure, $M^\pi$ in an MDP forms an affine set and so can be represented as
+        $M^{\pi} = \sum_{i=1}^d \phi_i w_i + b$ where $\phi_i$ and $b$ are independent of the policy $\pi$ and $d$ is the dimension of the affine space.
+    </div>
+
           
 
           

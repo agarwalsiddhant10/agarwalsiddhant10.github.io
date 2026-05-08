@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Generalist Agents</title>
+  <meta property="og:title" content="Generalist Agents" />
+  <meta property="og:description" content="Generalist agents through behavior foundation models and language-based task specifications." />
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400,600" rel="stylesheet" type="text/css" />
+
+  <style>
+    :root {
+      --text: #1f2937;
+      --muted: #4b5563;
+      --brand: #1367a7;
+      --border: #e5e7eb;
+      --panel: #f8fafc;
+      --title: #182b49;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Titillium Web", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      font-weight: 300;
+      font-size: 18px;
+      color: var(--text);
+      background: #ffffff;
+      line-height: 1.75;
+    }
+
+    .container {
+      width: min(900px, 92vw);
+      margin: 40px auto 60px auto;
+    }
+
+    h1, h2, h3 {
+      font-weight: 600;
+      color: var(--title);
+      margin-top: 32px;
+      margin-bottom: 12px;
+    }
+
+    h1 {
+      font-size: 42px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    h2 {
+      font-size: 28px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+      margin-top: 40px;
+    }
+
+    h3 {
+      font-size: 22px;
+    }
+
+    p {
+      margin-top: 10px;
+      margin-bottom: 14px;
+    }
+
+    a {
+      color: var(--brand);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: #208799;
+      text-decoration: underline;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 16px;
+      margin-top: 8px;
+      margin-bottom: 24px;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    .highlight {
+      background: var(--panel);
+      border-left: 4px solid var(--brand);
+      padding: 14px 18px;
+      margin: 18px 0;
+      border-radius: 4px;
+    }
+
+    .eq {
+      background: #fafafa;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin: 12px 0;
+      overflow-x: auto;
+    }
+
+    ul, ol {
+      margin-top: 10px;
+      margin-bottom: 14px;
+      padding-left: 28px;
+    }
+
+    li {
+      margin: 8px 0;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background-image: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.35), rgba(0,0,0,0));
+      margin: 32px 0;
+    }
+
+    .footnote {
+      color: var(--muted);
+      font-size: 15px;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+    }
+
+    code {
+      font-family: 'Courier New', monospace;
+      background: #f3f4f6;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 16px;
+    }
+
+    .strong {
+      font-weight: 700;
+      font-size: 19px;
+      color: #000000;
+    }
+  </style>
+
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\\(', '\\)']],
+        displayMath: [['$$', '$$'], ['\\[', '\\]']]
+      }
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+  <div class="container">
+    <div class="back-link">
+      <a href="../index.html">← Back to Home</a>
+    </div>
+
+    <h1>The Path to Generalist Agents passes through Behavior Foundation Models</h1>
+    <div class="meta">
+      Siddhant Agarwal · Feb 25, 2026
+    </div>
+
+    <p>
+      A long-standing dream for any AI researcher is to be surrounded by autonomous agents that can reliably help with everyday life and work. 
+      These systems should handle a wide range of tasks—from cooking, cleaning, and dishwashing at home to driving, coding, coordinating plans, and maintaining schedules—while adapting to our preferences and constraints. 
+      Either we can have specialized agents for each task, or we can have few agents with the capability to perform a broad range of tasks.
+    </p>
+
+    <h2>What Are Generalist Agents?</h2>
+
+    <p>
+      Generalist agents solve a broad range of tasks rather than optimizing for only one narrow objective. The same agent should be able to switch goals and still perform well, instead of requiring retraining for every task.
+      These agents act in interactive environments, where each action changes what the agent sees next. As a result, the tasks are sequential, for example, driving is not just one action but a sequence of actions (and reactions) with a goal of reaching a location.
+      Due to the nature of the environments and tasks, the generalist agents need to possess a concise but accurate understanding of the world, in order to make quick decisions for potentially unseen tasks. 
+      A practical requirement is that tasks should be easy to specify. Users should be able to communicate goals in a simple way, without having to engineer complex reward functions or low-level control details for each new task.
+    </p>
+
+    <figure style="text-align: center; margin: 32px 0;">
+      <img src="imgs/gen_agents.pdf" alt="Generalist agents overview" style="max-width: 100%; height: auto; border: 1px solid var(--border);" />
+      <figcaption style="color: var(--muted); font-size: 15px; margin-top: 12px;">Generalist agents</figcaption>
+    </figure>
+
+    There are two crucial aspects of building generalist agents: 
+    (1) how to build a single agent that can perform a wide range of tasks, and 
+    (2) how to specify tasks in a way that is easy for users but also allows the agent to understand and perform them effectively.
+    
+
+    <h2>Behavior Foundation Models</h2>
+
+    <p>
+      A behavior foundation model (BFM) can be viewed as a model that maps a policy to its induced behavior in an environment. 
+      This is useful because task solving can then be reframed as selecting the right behavior, instead of relearning dynamics from scratch for every new objective.
+    </p>
+
+    <p>
+     Successor measures provide an ideal summarization of the policy-induced behavior. 
+     Given a policy $\pi$, the successor measure $M^{\pi}$ represents the distribution of the future states encountered by the agent when executing $\pi$ in the environment. 
+     <!-- More formally, for a state-action pair $(s,a)$, the successor measure is defined as: -->
+      $M^{\pi}$ allows rapid policy evaluation for any arbitrary reward function as the expected return can be computed as the inner product of the successor measure and the reward function.
+    </p>
+    <div class="eq">
+      $$J(\pi) = \sum_{s} M^{\pi}(s) r(s).$$
+    </div>
+    <!-- <div class="eq">
+      $$M^{\pi}(s,a, s^+, a^+)=(1-\gamma)\sum_{t=0}^{\infty}\gamma^t\,\Pr_{\pi}(s_t=s^+,a_t=a^+|s_0=s,a_0=a).$$
+    </div> -->
+    <p>
+      A successor-measure BFM learns the map $\pi \mapsto M^{\pi}$ (or a structured approximation of it), effectively representing a space of behaviors indexed by policies.
+      Often this policy space is parameterized by a latent variable $z$, so we have a map $z \mapsto \pi_z \mapsto M^{\pi_z}$, where the BFM learns to represent the behavior space in terms of the latent variable $z$.
+      Then, for a new task, we search over $z$ to find the desired policy:
+    </p>
+    <div class="eq">
+      $$z^* = \arg\max_{z\in\mathcal{Z}} J(\pi_z), \quad \pi^*=\pi_{z^*}.$$
+    </div>
+
+    <p>
+      There have been several methods for learning successor-measure BFMs[1, 2, 3] which parameterize the successor measures in different ways. 
+        For instance, Proto-Successor Measure (PSM)[1] uses a linear decomposition of successor measures as, $M^{\pi} = \sum_{i=1}^d \phi_i w_i + b$, where $\phi_i$ and $b$ are independent of the policy $\pi$ and $w_i$ are policy-specific coefficients.
+        Forward-Backward (FB) representations [2] use a SF-based factorization, $M^{\pi}(s,a,s^+) = \psi(s,a, z)^\top \phi(s^+)$. Other methods which use the same factorization are [3, 4].
+      </p>
+      <p>
+      For an efficient policy search, these methods often assume a task distribution given by reward functions that are linear in state features, 
+      $r_z(s)=\phi(s)^\top z$ where $z$ maps to the corresponding policy for the reward $r_z$. 
+      Under this linearized task-space assumption, policy selection reduces to task identification i.e. finding the $z$ that specifies that task. This can have closed-form solutions leading to a zero-shot policy learning for a wide set of task.  
+    </p>
+
+    
+
+    <h2>Language-based task specifications</h2>
+
+    <p>
+      Natural language is probably the most intuitive and flexible way for users to specify tasks. It allows us to communicate complex goals, constraints, and preferences in a way that is easy for humans to understand and use.
+      Unfortunately, for a long time, it was difficult to ground language to the low-level control or the low-level task details required for training agents. 
+        However, with the rise of large-scale generative models, we have the desired tools to bridge this gap. 
+        These large models are aware of the expectations of the user when they specify a task in natural language.
+        This is because they have been trained on large amounts of data that include language descriptions of tasks and their corresponding behaviors (i.e. videos). 
+     These models have shown impressive abilities to understand and generate multimodal content from language descriptions. In particular, language-to-video generation models can take a text prompt like "robot picks up red cup" and produce a plausible video sequence showing that behavior.
+      This capability can serve as both a task understanding module and a task specification interface for generalist agents.
+    </p>
+
+    <figure style="text-align: center; margin: 32px 0;">
+      <img src="imgs/vlm.pdf" alt="Language to task video generation" style="max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 8px;" />
+      <figcaption style="color: var(--muted); font-size: 15px; margin-top: 12px;">VLM generating the corresponding video for "robot picks up red cup".</figcaption>
+    </figure>
+
+    <p>
+      There are broadly two approaches to building language-conditioned task models:
+    </p>
+    <ul>
+      <li><span class="strong">Large pretrained models:</span> Foundation models like CLIP, GPT-4V, or video diffusion models trained on massive internet-scale datasets can provide zero-shot videos for the corresponding language prompts. While simple to use, they do not always produce dynamics-aware or agent-aware videos.</li>
+      <li><span class="strong">Finetuned domain-specific models:</span> Starting from a pretrained backbone and finetuning on the relevant domain-specific data (e.g., robot demonstrations or simulation data) can ground language in the specific action space and physics of the target environment. This often yields better task alignment at the cost of requiring domain data.</li>
+    </ul>
+
+    <p>
+      In either case, the video-language models (VLMs) effectively learn a map from text instructions to expected behaviors. 
+    </p>
+
+    <h2>Putting them together</h2>
+
+    RLZero [5] is recent work that combines these two to build a generalist agent that is language-promptable i.e. the tasks are provided as language instructions and the agent uses a language-to-video model to generate the corresponding task video, which is then used as a target for a successor-measure BFM to find the policy that best matches that behavior.
+
+    <figure style="text-align: center; margin: 32px 0;">
+        <img src="imgs/rlzero.png" alt="RLZero workflow" style="max-width: 100%; height: auto; border: 1px solid var(--border); border-radius: 8px;" />
+        <figcaption style="color: var(--muted); font-size: 15px; margin-top: 12px;">RLZero workflow: Language instruction → VLM → Task video → Projected task video → BFM → Policy</figcaption>
+    </figure>
+
+    The approach has three stages: 
+    <ol>
+        <li><span class="strong">Imagine:</span> A language-to-video model converts natural language instructions into a target video demonstrating the desired behavior.</li>
+        <li><span class="strong">Project:</span> The sequences of frames are projected into the agent's known state space i.e. the dataset space.</li>
+        <li><span class="strong">Imitate:</span> The Behavior Foundation Model produces a policy that imitates the projected behavior.</li>
+    </ol>
+
+    The imagine step can be performed using a finetuned model, pretrained model or direct search through Youtube videos indicating that the imagine step does not need to produce videos grounded to the dynamics. 
+
+    <h2>Examples</h2>
+    <div style="display: grid; grid-template-columns: auto repeat(5, 1fr); gap: 16px; margin: 24px 0;">
+        <div style="display: flex; flex-direction: column; justify-content: center; font-weight: 600; color: var(--title); min-width: 30px;">
+            <p style="margin: 0;">Task:</p>
+            <!-- <p style="margin: 0; margin-top: 24px;">Agent's policy</p> -->
+        </div>
+        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; height: 100%;">
+            <p style="font-size: 16px; font-weight: 600; color: var(--title); margin-bottom: 12px;">Cartwheel</p>
+        </div>
+        <div style="text-align: center; display: flex; flex-direction: column; justify-content: center; height: 100%;">
+            <p style="font-size: 16px; font-weight: 600; color: var(--title); margin-bottom: 12px;">Headstand</p>
+        </div>
+        <div style="text-align: center;">
+            <img src="imgs/rlz/dem1.mp4" alt="Demo 1" style="width: 100%; height: 100px; border: 1px solid var(--border); border-radius: 8px;" />
+        </div>
+        <div style="text-align: center;">
+            <img src="imgs/rlz/dem2.mp4" alt="Demo 2" style="width: 100%; height: 100px; border: 1px solid var(--border); border-radius: 8px;" />
+        </div>
+        <div></div>
+        <div style="display: flex; flex-direction: column; justify-content: center; font-weight: 600; color: var(--title); min-width: 80px;">
+            <!-- <p style="margin: 0;">Task</p> -->
+            <p style="margin: 0; margin-top: 24px;">Agent's policy:</p>
+        </div>
+        <div style="text-align: center;">
+            <img src="imgs/rlz/cartwheel.mp4" alt="Cartwheel Output" style="width: 100%; height: 100px; object-fit: cover; border: 1px solid var(--border); border-radius: 8px;" />
+        </div>
+        <div style="text-align: center;">
+            <img src="imgs/rlz/headstand.mp4" alt="Headstand Output" style="width: 100%; height: 100px; object-fit: cover; border: 1px solid var(--border); border-radius: 8px;" />
+        </div>
+        <div style="text-align: center;">
+            <img src="imgs/rlz/out1.mp4" alt="Demo 1 Output" style="width: 100%; height: 100px; object-fit: cover; border: 1px solid var(--border); border-radius: 8px;" />
+        </div>
+        <div style="text-align: center;">
+            <img src="imgs/rlz/out2.mp4" alt="Demo 2 Output" style="width: 100%; height: 100px; object-fit: cover; border: 1px solid var(--border); border-radius: 8px;" />
+        </div>
+    </div>
+    <hr />
+    <div class="footnote">
+      <strong>References</strong><br />
+    <i>[1] Agarwal, S., Sikchi, H., Stone, P., & Zhang, A. (2025, October). Proto Successor Measure: Representing the Behavior Space of an RL Agent. In International Conference on Machine Learning (ICML)</i>.<br />
+    <i>[2] Touati, A., & Ollivier, Y. (2021). Learning one representation to optimize all rewards. Advances in Neural Information Processing Systems, 34, 13-23.</i>.<br />  
+    <i>[3] Park, S., Kreiman, T., & Levine, S. (2024, July). Foundation Policies with Hilbert Representations. In International Conference on Machine Learning (pp. 39737-39761). PMLR. </i><br />
+    <i>[4] Zheng, C., Tuyls, J., Peng, J., & Eysenbach, B. Can a MISL Fly? Analysis and Ingredients for Mutual Information Skill Learning. In The Thirteenth International Conference on Learning Representations.</i><br />
+    <i>[5] Sikchi, H., Agarwal, S., Jajoo, P., Parajuli, S., Chuck, C., Rudolph, M., ... & Niekum, S. RLZero: Direct Policy Inference from Language Without In-Domain Supervision. In The Thirty-ninth Annual Conference on Neural Information Processing Systems.</i>
+    </div>
+  </div>
+</body>
+</html>
