@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="400" viewBox="0 0 160 100" role="img" aria-labelledby="title desc">
+  <title id="title">MetaBFM framework</title>
+  <desc id="desc">Meta-reinforcement learning, zero-shot reinforcement learning, and exploration combine in MetaBFM.</desc>
+  <rect width="160" height="100" fill="#fff"/>
+  <g fill="none" stroke="#9aa8b5" stroke-width="1.2">
+    <path d="M77 18H89V50H101M77 50H101M77 82H89V50"/>
+    <path d="m97 46 4 4-4 4"/>
+  </g>
+  <g fill="#f2f6fa" stroke="#b8c9d9" stroke-width=".8">
+    <rect x="3" y="7" width="74" height="22" rx="4"/>
+    <rect x="3" y="39" width="74" height="22" rx="4"/>
+    <rect x="3" y="71" width="74" height="22" rx="4"/>
+  </g>
+  <rect x="104" y="34" width="54" height="32" rx="5" fill="#e6f0fa" stroke="#1772d0" stroke-width="1"/>
+  <g font-family="Arial, Helvetica, sans-serif" text-anchor="middle" fill="#263c50" font-size="9">
+    <text x="40" y="21.2">Meta-RL</text>
+    <text x="40" y="53.2">Zero-shot RL</text>
+    <text x="40" y="85.2">Exploration</text>
+    <text x="131" y="53.5" font-size="9.5" font-weight="bold" fill="#145da6">MetaBFM</text>
+  </g>
+</svg>

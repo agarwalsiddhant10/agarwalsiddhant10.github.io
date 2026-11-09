@@ -20,12 +20,13 @@
               <p style="text-align:center">
                 <name>Siddhant Agarwal</name>
               </p>
-              <p>I am a fourth year Ph.D. student in the Computer Science Department at University of Texas at Austin, working with <a href="https://amyzhang.github.io/">Prof. Amy Zhang</a> and <a href="https://www.cs.utexas.edu/~pstone/index.shtml">Prof. Peter Stone</a>. 
-                I am interested in utilizing reward-free transitions for improving reinforcement learning be it through designing principled representation learning techniques or downstream algorithms independent of rewards. 
-                For this I have been looking at RL from the perspective of visitation distributions and utilizing unsupervised RL, goal-conditioned RL and distribution matching learning techniques. 
-                Previously, I completed my Dual Degree (B.Tech. + M.Tech.) in Computer Science and Engineering from the Indian Institute of Technology Kharagpur with a department rank 1. 
-                During my undergrad, I was a leading member of the Autonomous Ground Vehicles research group where I worked on a number of perception and planning projects for autonomous driving.
-                I completed my bachelor thesis on "Reinforcement Explanation Learning" under the supervision of <a href="https://cse.iitkgp.ac.in/~adas/">Prof. Abir Das</a>. 
+              <p>I am a Ph.D. student in the Department of Computer Science at The University of Texas at Austin, working with <a href="https://amyzhang.github.io/">Prof. Amy Zhang</a> and <a href="https://www.cs.utexas.edu/~pstone/index.shtml">Prof. Peter Stone</a>.
+                My research focuses on learning from reward-free interaction data to develop representations and policies that generalize across tasks.
+                I study reinforcement learning through the lens of visitation distributions, with a focus on unsupervised RL, goal-conditioned RL, and distribution matching.
+                I have also interned at Nuro and Amazon.
+                Previously, I completed my Dual Degree (B.Tech. + M.Tech.) in Computer Science and Engineering at IIT Kharagpur, graduating first in my department.
+                During my undergraduate studies, I was a leading member of the Autonomous Ground Vehicles research group, working on perception and planning for autonomous driving.
+                I completed my bachelor's thesis on "Reinforcement Explanation Learning" under the supervision of <a href="https://cse.iitkgp.ac.in/~adas/">Prof. Abir Das</a>.
                 <!-- My research interests include goal conditioned reinforcement learning and representation learning.  -->
                 <!-- I like to view reinforcement learning from state-visitation distributions perspective and look to extend RL as a distribution matching problem. I am also interested in principled algoritms for learning state abstractions or representations that are useful for unknown downstream tasks. -->
                 <!-- I have spent time at the Autonomous Ground Vehicle Research Group at IIT Kharagpur. I was also a part of the Computer Vision and Intelligence Research Lab where I worked with <a href="https://cse.iitkgp.ac.in/~adas/">Prof. Abir Das</a> on RL and explainable AI for two years. I have interned under <a href="https://zicokolter.com/">Prof. Zico Kolter</a> where I worked on adversarial robustness. I have also worked on the conjugation on knowledge graph reasoning and reinforcement learning with <a href="https://shanzhenren.github.io/">Prof. Xiang Ren</a>. I worked with <a href="https://agarwl.github.io/">Rishabh Agarwal</a> and <a href="https://mila.quebec/en/person/aaron-courville/">Prof. Aaron Courville</a> on generalization in reinforcement learning in 2021. -->
@@ -83,18 +84,51 @@
         </tbody></table>
 
         <!-- Papers list -->
+        <!-- <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+           <td style="padding:20px;width:25%;vertical-align:middle">
+             <img src="images/metabfm.svg" width="160" height="100" alt="MetaBFM combines meta-RL, zero-shot RL, and exploration">
+           </td>
+           <td width="75%" valign="middle">
+             <a href="https://openreview.net/forum?id=FAb595Jqbg">
+               <papertitle>Meta-Reinforcement Learning with Zero-Shot Reinforcement Learning</papertitle>
+             </a>
+             <br> Jake Grigsby, Siddhant Agarwal, Yu Lei, Leonidas Varveropoulos, Yuke Zhu<br>
+             <em>NeurIPS 2026</em><br>
+             <a href="https://openreview.net/forum?id=FAb595Jqbg">paper</a>
+             <p> We introduce MetaBFM, combining meta-reinforcement learning, zero-shot reinforcement learning, and intrinsic exploration to adapt to new reward functions in new environments.</p>
+           </td>
+         </tr> </tbody></table> -->
+
+         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+          <tr>
+           <td style="padding:20px;width:25%;vertical-align:middle">
+             <img src="images/rldp.jpg" width="160" height="100" style="object-fit:contain" alt="Regularized Latent Dynamics Prediction method diagram">
+           </td>
+           <td width="75%" valign="middle">
+             <a href="https://arxiv.org/abs/2603.15857">
+               <papertitle>Regularized Latent Dynamics Prediction is a Strong Baseline For Behavioral Foundation Models</papertitle>
+             </a>
+             <br> Pranaya Jajoo, Harshit Sikchi*, Siddhant Agarwal*, Amy Zhang, Scott Niekum, Martha White
+               <br><i>* denotes equal contribution</i><br>
+             <em>ICLR 2026</em><br>
+             <a href="https://arxiv.org/abs/2603.15857">paper</a>
+             <p> We combine latent dynamics prediction with orthogonality regularization to learn representations for zero-shot reinforcement learning, including when dataset coverage is limited.</p>
+           </td>
+         </tr> </tbody></table>
+
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
           <tr onmouseout="nlt_stop()" onmouseover="nlt_start()">
            <td style="padding:20px;width:25%;vertical-align:middle">
              <img src="images/rlzero.png" width="160" height="100">
            </td>
            <td width="75%" valign="middle">
-             <a href="https://arxiv.org/abs/2412.05718l">
-               <papertitle>RLZero: Zero Shot Language to Behaviors without Any Supervision</papertitle>
+             <a href="https://arxiv.org/abs/2412.05718">
+               <papertitle>RLZero: Direct Policy Inference from Language Without In-Domain Supervision</papertitle>
              </a>
-             <br> Harshit Sikchi*, Siddhant Agarwal*, Pranaya Jajoo*, Samyak Parajuli*, Max Rudolph*, Peter Stone, Amy Zhang, Scott Niekum
+             <br> Harshit Sikchi*, Siddhant Agarwal*, Pranaya Jajoo*, Samyak Parajuli*, Caleb Chuck*, Max Rudolph*, Peter Stone, Amy Zhang, Scott Niekum
                <br><i>* denotes equal contribution</i><br>
-             <em>Under Submission ICML 2025</em><br>
+             <em>NeurIPS 2025</em><br>
              <a href="https://hari-sikchi.github.io/rlzero/">project page</a> /
              <a href="https://arxiv.org/abs/2412.05718">paper</a> 
              <!-- <a href="https://youtu.be/EpH175PY1A0">video</a> / -->
@@ -113,7 +147,7 @@
              </a>
              <br> Siddhant Agarwal*, Harshit Sikchi*, Peter Stone, Amy Zhang
                <br><i>* denotes equal contribution</i><br>
-             <em>Under Submission ICML 2025</em><br>
+             <em>ICML 2025</em><br>
              <a href="https://agarwalsiddhant10.github.io/projects/psm.html">project page</a> /
              <a href="https://arxiv.org/abs/2411.19418">paper</a> 
              <!-- <a href="https://youtu.be/EpH175PY1A0">video</a> / -->
